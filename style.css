@@ -143,3 +143,196 @@ body.dark h2,
 body.dark h3 {
     color: #f0f0f0;
 }
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+
+    background: #fafafa;
+    transition: 0.15s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
+}
+
+
+body.dark .form-group input,
+body.dark .form-group select {
+    background: #2a2a2a;
+    border-color: #555;
+    color: #e8e8e8;
+}
+
+body.dark .form-group input:focus,
+body.dark .form-group select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
+
+/* Larger select dropdown */
+.custom-select {
+    width: 100%;
+    padding: 16px 18px;        /* bigger padding */
+    font-size: 17px;           /* larger text */
+    appearance: none;
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;       /* smoother edges */
+    background: #ffffff;
+    cursor: pointer;
+    transition: 0.2s ease;
+    height: 55px;              /* increased height */
+}
+
+/* Bigger arrow */
+.custom-select-wrapper::after {
+    content: "▾";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;           /* bigger arrow */
+    color: #555;
+    pointer-events: none;
+}
+
+/* Hover/focus effects */
+.custom-select:hover,
+.custom-select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.35);
+}
+
+/* Dark mode */
+body.dark .custom-select {
+    background: #2a2a2a;
+    border-color: #666;
+    color: #eee;
+}
+
+body.dark .custom-select-wrapper::after {
+    color: #ccc;
+}
+
+/* Wrapper needed for the arrow */
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Larger, nicer select input */
+.custom-select {
+    width: 100%;
+    padding: 16px 18px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff;
+    appearance: none;        /* remove default arrow */
+    cursor: pointer;
+    transition: 0.2s ease;
+    height: 55px;            /* increases height */
+}
+
+/* Custom downward arrow */
+.custom-select-wrapper::after {
+    content: "▼";
+    font-size: 18px;
+    color: #555;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Hover / focus effect */
+.custom-select:hover,
+.custom-select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.3);
+}
+
+/* Dark mode compatibility */
+body.dark .custom-select {
+    background: #333;
+    border-color: #555;
+    color: #eee;
+}
+
+body.dark .custom-select-wrapper::after {
+    color: #ccc;
+}
+
+
+}
+
+
+/* Reset Safari/Chrome default styling */
+#contributionFrequency {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* Modern clean style */
+#contributionFrequency {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin-bottom: 25px;
+}
+
+/* Hover + focus */
+#contributionFrequency:hover,
+#contributionFrequency:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74,144,226,0.3);
+}
+
+/* Wrapper + custom arrow */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "▾";
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #666;
+    pointer-events: none;
+}
+
+

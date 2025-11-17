@@ -32,18 +32,25 @@
             <label>Years:</label>
             <input type="number" id="years" />
 
-            <button onclick="calculate()">Calculate</button>
-
             <label for="contributionAmount">Recurring Contribution</label>
             <input type="number" id="contributionAmount" placeholder="Amount added each period">
 
             <label for="contributionFrequency">Contribution Frequency</label>
-            <select id="contributionFrequency">
-                <option value="none">No recurring contributions</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-                <option value="yearly">Yearly</option>
-            </select>
+            <div class="select-wrapper">
+                <select id="contributionFrequency">
+                    <option value="none">No recurring contributions</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+
+
+
+
+            <button onclick="calculate()">Calculate</button>
+
+
 
 
             <h2 id="result"></h2>
