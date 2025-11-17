@@ -25,7 +25,7 @@
             <label>Years:</label>
             <input type="number" id="years" />
 
-            <button onclick="calculateReturn()">Calculate</button>
+            <button onclick="calculate()">Calculate</button>
 
             <label for="contributionAmount">Recurring Contribution</label>
             <input type="number" id="contributionAmount" placeholder="Amount added each period">
@@ -41,6 +41,13 @@
 
             <h2 id="result"></h2>
         </div>
+
+        <div id="resultsBox" style="display:none; margin-top:20px;">
+            <p><strong>Total Invested:</strong> <span id="investedVal"></span></p>
+            <p><strong>Final Value:</strong> <span id="finalVal"></span></p>
+            <p><strong>Interest Earned:</strong> <span id="interestVal"></span></p>
+        </div>
+
 
         <div class="right" id="chartSection" style="display: none;">
             <h2>Investment Breakdown</h2>
