@@ -1,23 +1,52 @@
 let chart;
 
-function calculateReturn() {
-    let principal = parseFloat(document.getElementById("principal").value);
-    let rate = parseFloat(document.getElementById("rate").value) / 100;
-    let years = parseFloat(document.getElementById("years").value);
+function calculate() {
+    const P = parseFloat(document.getElementById("principal").value);
+    const r = parseFloat(document.getElementById("interest").value) / 100;
+    const years = parseFloat(document.getElementById("years").value);
 
-    if (isNaN(principal) || isNaN(rate) || isNaN(years)) {
-        document.getElementById("result").innerHTML = "Please fill all inputs.";
+    const C = parseFloat(document.getElementById("contributionAmount").value) || 0;
+    const freq = document.getElementById("contributionFrequency").value;
+
+    // Compounding periods per year
+    let n;
+    if (freq === "weekly") n = 52;
+    else if (freq === "monthly") n = 12;
+    else if (freq === "yearly") n = 1;
+    else n = 1;  // default yearly compounding
+
+    // If no contributions selected
+    if (freq === "none") {
+        const finalAmount = P * Math.pow(1 + r, years);
+
+        showResults(P, finalAmount);
         return;
     }
 
-    let finalAmount = principal * Math.pow(1 + rate, years);
-    let interest = finalAmount - principal;
+    // Compound interest with recurring contributions
+    const finalAmount =
+        P * Math.pow(1 + r / n, n * years) + 
+        C * ((Math.pow(1 + r / n, n * years) - 1) / (r / n));
 
-    document.getElementById("result").innerHTML =
-        "Final Value: $" + finalAmount.toFixed(2);
-
-    updateChart(principal, interest);
+    showResults(P + C * n * years, finalAmount); // send invested vs earned
 }
+
+function showResults(invested, finalAmount) {
+    const interestEarned = finalAmount - invested;
+
+    document.getElementById("chartSection").style.display = "flex";
+
+    new Chart(document.getElementById("pieChart"), {
+        type: "pie",
+        data: {
+            labels: ["Principal + Contributions", "Interest Earned"],
+            datasets: [{
+                data: [invested, interestEarned]
+            }]
+        }
+    });
+}
+
 
 function updateChart(principal, interest) {
 

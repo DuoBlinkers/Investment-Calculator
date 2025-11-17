@@ -27,6 +27,18 @@
 
             <button onclick="calculateReturn()">Calculate</button>
 
+            <label for="contributionAmount">Recurring Contribution</label>
+            <input type="number" id="contributionAmount" placeholder="Amount added each period">
+
+            <label for="contributionFrequency">Contribution Frequency</label>
+            <select id="contributionFrequency">
+                <option value="none">No recurring contributions</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+            </select>
+
+
             <h2 id="result"></h2>
         </div>
 
