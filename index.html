@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Return Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="left">
+            <h1>Investment Calculator</h1>
+
+            <label>Initial Amount ($):</label>
+            <input type="number" id="principal" />
+
+            <label>Annual Interest Rate (%):</label>
+            <input type="number" id="rate" />
+
+            <label>Years:</label>
+            <input type="number" id="years" />
+
+            <button onclick="calculateReturn()">Calculate</button>
+
+            <h2 id="result"></h2>
+        </div>
+
+        <div class="right" id="chartSection" style="display: none;">
+            <h2>Investment Breakdown</h2>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
