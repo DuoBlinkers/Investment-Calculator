@@ -55,3 +55,91 @@ button:hover {
 .left {
     flex: 0 0 380px;  
 }
+
+/* ======================================= */
+/*             DARK MODE SWITCH            */
+/* ======================================= */
+
+.switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 55px;
+    height: 28px;
+    display: inline-block;
+    z-index: 1000;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* When toggled ON */
+input:checked + .slider {
+    background-color: #4a90e2;
+}
+
+input:checked + .slider:before {
+    transform: translateX(27px);
+}
+
+/* ======================================= */
+/*                DARK MODE                */
+/* ======================================= */
+
+body.dark {
+    background: #121212;
+    color: #e6e6e6;
+}
+
+body.dark .container {
+    background: #1e1e1e;
+    box-shadow: 0 2px 12px rgba(255, 255, 255, 0.08);
+}
+
+body.dark input,
+body.dark select {
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark button {
+    background: #3d7bd1;
+    color: white;
+}
+
+body.dark button:hover {
+    background: #346bb5;
+}
+
+body.dark label,
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    color: #f0f0f0;
+}

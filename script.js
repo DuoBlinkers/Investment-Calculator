@@ -1,5 +1,24 @@
 let chart;
 
+let darkMode = false;
+
+const toggle = document.getElementById("darkModeToggle");
+
+toggle.addEventListener("change", () => {
+    darkMode = toggle.checked;
+    document.body.classList.toggle("dark", darkMode);
+
+    // Re-render chart in correct color mode
+    if (chart) {
+        const invested = chart.data.datasets[0].data[0];
+        const interest = chart.data.datasets[0].data[1];
+        updateChart(invested, interest);
+    }
+});
+
+
+
+
 function calculate() {
     const P = parseFloat(document.getElementById("principal").value);
     const r = parseFloat(document.getElementById("rate").value) / 100;
